@@ -1,2 +1,3 @@
 # goit-js-hw-11
-Homework 11 (JS) - FINAL
+
+Homework 11 (JS)
