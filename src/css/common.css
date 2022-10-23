@@ -5,6 +5,22 @@ body {
   font-size: 14px;
   line-height: 1.71;
 }
+button {
+  font: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -15,6 +31,6 @@ body {
   padding: 0;
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   margin: -1px;
 }
