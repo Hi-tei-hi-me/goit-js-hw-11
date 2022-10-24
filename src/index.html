@@ -14,10 +14,11 @@
     <!-- Search form -->
     <form class="search-form" id="search-form">
       <input
+        class="search-form-input"
         type="text"
         name="searchQuery"
         autocomplete="off"
-        placeholder="Search images..."
+        placeholder="Search images of..."
       />
       <button type="submit">Search</button>
     </form>
@@ -42,7 +43,9 @@
         </div>
       </div> -->
     </div>
-    <button type="button" class="load-more visually-hidden">Load more</button>
+    <button type="button" class="load-more" id="load-more-btn" hidden>
+      Load more
+    </button>
 
     <script src="js/main.js" type="module"></script>
   </body>
