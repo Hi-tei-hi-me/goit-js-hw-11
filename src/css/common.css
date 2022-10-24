@@ -1,23 +1,21 @@
 body {
   font-family: 'Montserrat Alternates', sans-serif;
-  background-color: #f5f7fa;
-  padding: 40px;
+  background-color: lightgrey;
+  padding: 60px 40px;
   font-size: 14px;
   line-height: 1.71;
+  text-align: center;
 }
 
 button {
   font: inherit;
+  padding: 5px;
+  border: grey 1px solid;
+  border-radius: 10px;
 }
 
 a {
   font: inherit;
   color: inherit;
   text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }

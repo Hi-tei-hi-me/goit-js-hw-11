@@ -21,14 +21,13 @@ refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 let lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
   captionDelay: 250,
 });
 
 class QueryHandler {
   constructor() {
     this.page = 1;
-    this.perPage = 50;
+    this.perPage = 100;
     this.searchQuery = '';
     this.axios = require('axios');
   }
@@ -83,10 +82,10 @@ function onSearch(event) {
         const maxPage = totalHits / hits.length;
         const currentPage = queryHandler.page - 1;
         if (maxPage <= currentPage) {
-          Notiflix.Notify.info("Wow! That's all we have for you.");
           Notiflix.Notify.success(
             `Hooray! We found ${totalHits} images for you.`
           );
+          Notiflix.Notify.info("Wow! That's all we have for you.");
           refs.loadMoreBtn.hidden = true;
           return queryResultsMarkup(hits);
         }
@@ -137,21 +136,24 @@ function imageMarkup(data) {
         downloads,
       }) => {
         return /*html*/ `<a class="gallery-item" href="${largeImageURL}">
-		 <div class="photo-card">
-		  <img src="${webformatURL}" alt="Added tags: ${tags}" loading="lazy" width="320" height="214"/>
-		  <div class="info"><p class="info-item">
-		  <b>Likes:</b> ${likes}
-		</p>
-		<p class="info-item">
-		  <b>Views:</b> ${views}
-		</p>
-		<p class="info-item">
-		  <b>Comments:</b> ${comments}
-		</p>
-		<p class="info-item">
-		  <b>Downloads:</b> ${downloads}
-		</p>
-	 </div></div></a>`;
+		  <div class="photo-card">
+		  <img class="photo-image" src="${webformatURL}" alt="Added tags: ${tags}" loading="lazy"/>
+		  <div class="info">
+      <div class="wrapper1">
+      <p class="info-item">
+		  <b>Views:</b> ${views}</p>
+      <p class="info-item">
+		  <b>Likes:</b> ${likes}</p>
+      </div>
+      <div class="wrapper2">
+      <p class="info-item">
+		  <b>Downloads:</b> ${downloads}</p>
+      <p class="info-item">
+		  <b>Comments:</b> ${comments}</p>
+      </div>
+      </div>
+      </div>
+      </a>`;
       }
     )
     .join('');
