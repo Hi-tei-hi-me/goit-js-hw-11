@@ -1,10 +1,20 @@
 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
+.gallery-item {
+}
+
 .photo-card {
 }
+
 .info {
 }
+
 .info-item {
 }
+
 .load-more {
 }

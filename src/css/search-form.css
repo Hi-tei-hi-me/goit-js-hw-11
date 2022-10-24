@@ -1,2 +1,14 @@
 .search-form {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form-input {
+  margin-right: 20px;
+  padding: 10px;
+}
+.search-form-input::placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
 }
